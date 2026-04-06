@@ -11,7 +11,7 @@ CORS(app, supports_credentials=True)
 
 # ─── DB Connection ────────────────────────────────────────────
 # ─── DB Connection (FIXED) ────────────────────────────────────
-import os
+
 
 def get_db():
     try:
