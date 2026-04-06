@@ -17,7 +17,7 @@ def get_db():
             host="localhost",
             user="root",
             password="mysql",  # 🔴 PUT YOUR PASSWORD HERE
-            database="volunteer_db"
+            database="railway"
         )
         return db
     except mysql.connector.Error as err:
