@@ -11,13 +11,16 @@ CORS(app, supports_credentials=True)
 
 # ─── DB Connection ────────────────────────────────────────────
 # ─── DB Connection (FIXED) ────────────────────────────────────
+import os
+
 def get_db():
     try:
         db = mysql.connector.connect(
-            host="localhost",
-            user="root",
-            password="mysql",  # 🔴 PUT YOUR PASSWORD HERE
-            database="railway"
+            host=os.getenv("MYSQLHOST"),
+            user=os.getenv("MYSQLUSER"),
+            password=os.getenv("MYSQLPASSWORD"),
+            database=os.getenv("MYSQLDATABASE"),
+            port=int(os.getenv("MYSQLPORT"))
         )
         return db
     except mysql.connector.Error as err:
